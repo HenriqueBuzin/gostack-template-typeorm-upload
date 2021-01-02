@@ -1,24 +1,19 @@
-import {
+import { 
   Entity,
-  Column,
+  Column, 
   PrimaryGeneratedColumn,
-  CreateDateColumn,
-  UpdateDateColumn,
-  OneToMany,
-} from 'typeorm';
-
-import Transaction from './Transaction';
+  CreateDateColumn, 
+  UpdateDateColumn 
+} from "typeorm";
 
 @Entity('categories')
 class Category {
+
   @PrimaryGeneratedColumn('uuid')
   id: string;
 
   @Column()
   title: string;
-
-  @OneToMany(() => Transaction, transaction => transaction.category)
-  transaction: Transaction;
 
   @CreateDateColumn()
   created_at: Date;
